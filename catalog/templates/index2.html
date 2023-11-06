@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание профиля</title>
+   <link rel="stylesheet" href="{% static "css/style2.css" %}" />
+</head>
+<body>
+    <header class="header">
+            <div class = "header">
+                <img src="{% static "img/logo.png" %}" alt="logo">
+                <button class="button_header" >Выйти из аккаунта</button>
+            </div>
+    </header>
+    <div class="block">
+        <div class="top">
+            <button class="button_back" onclick="window.location.href = 'index.html';">Назад</button>
+            <div class="page-name">
+                <h3>Создание профиля</h3>
+                <div class="about">
+                    <p>/Образование</p>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <section>
+                
+                <div class="information">
+                    <form class="form" method="post">
+                        <div class="who_choice">
+                            <label class="who"> <input type="radio" name="who">Студент / выпускник</label>
+                            <label class="who"> <input type="radio" name="who">Сотрудник</label>
+                        </div>
+                        <label for="Course">Курс</label>
+                        <input name="Course" id="Course" type="text" >
+                        <select name="obrazov" class="obrazov">
+                            <option value="Бакалавриат">Бакалавриат</option>
+                            <option value="Магистратураa">Магистратура</option>
+                            <option value="Аспирантура">Аспирантура</option>
+                            <option value="Сотрудник">Сотрудник</option>
+                        </select>
+                        <label for="facultet">Факультет</label>
+                        <input name="facultet" id="facultet" type="text" placeholder="Факультет">
+                        <label for="ObProg">Образовательная программа</label>
+                        <input name="ObProg" id="ObProg" type="text" placeholder="Образовательная программа">
+                        <input type="text" placeholder="Работа">
+                        {{form.name.as_hidden}}
+                    </form>
+                    <script src= "{% static "js/script.js" %} "></script>
+                </div>
+            </section>
+            <section>
+                <div class="pag"><p>Так будет выглядеть твоя будущая страница</p></div>
+                <div class="view_page">
+                    <div class="left">
+                        <div class="photo_selected"></div>
+                        <button class="button_show">Показать контакты</button>
+                    </div>
+                    <div class="inform">
+                        <div class="name_show" id="name_show"></div>
+                        <div class="inf_below">
+                            <div class="sex_show" id="sex_show"></div>
+                            <div class="birth_show" id="birth_show"></div>
+                        </div>
+                        <div class="about_show" id="about_show"></div>
+                    </div>
+                </div>
+                <div class="smth">
+                    <div class="new_inf">Расскажи где ты учишься</div>
+                    <div class="tell">
+                        Часто студенты ищут соседей по схожим интересам
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+        <div class="fn">
+            <button class="button_next" >Продолжить</button>
+        </div>
+        <div class="end">
+            <div class="connection">
+                <div class="mail">Support@homeet.com</div>
+                <div class="describe"> Техническая поддержка</div>
+            </div>
+            <div class="cont">
+                <div class="text">
+                    <p>О сервисе</p>
+                    <p>Контакты</p>
+                    <p>Политика конфиденциальности</p>
+                </div>
+                <div class="icons">
+                    <button class="button"><img src="{% static "img/tg.png"  %}" alt="tg"></button>
+                    <button class="button"><img src="{% static "img/vk.png"  %}" alt="vk"></button>
+                </div>
+            </div>
+            <img src="img/Line 4.png" alt="">
+            <div class="endend">
+                <p>Предложение не является публичной офертой. 
+Сервис не несет ответственности за действия пользователей, достоверность информации и т.д.</p>
+                <p>Сделано в бвср</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

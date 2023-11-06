@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание профиля</title>
+   <link rel="stylesheet" href="{% static "css/style.css" %}" />
+</head>
+<body>
+    <header class="header">
+            <div class = "header">
+                <img src="{% static "img/logo.png" %}" alt="logo">
+                <button class="button_header" >Выйти из аккаунта</button>
+            </div>
+    </header>
+    <div class="block">
+        <div class="top">
+            <button class="button_top" onclick="window.location.href = '#';">На главную</button>
+            <div class="page-name">
+                <h3>Создание профиля</h3>
+                <div class="about">
+                    <p>/о себе</p>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <section>
+                <div class="photo">
+                    <div class="photo_content">
+                        <div class="download">
+                            <p>Аватар профиля</p>
+                            <button class="button_download" >Загрузить</button>
+                        </div>
+                        <p>Загрузите фотографию весом не более 10 мб</p>
+                    </div>
+                </div>
+                <div class="information">
+                    
+                    <form class="form" method="post" id="firstPage">
+                        {% csrf_token %}
+                        <div class="form_input">
+                            <label for="name">
+                                <span>Имя и фамилия</span>
+                                <!--input name="name" id="namexx" type="text" required/-->
+                                {{form.name}}
+                                <span class="error hidden">Введите имя русскими буквами</span>
+                            </label>
+                        </div>
+                        <div class="sex_choice">
+                            <label class="sex"> <input type="radio" name="sex">Парень</label>
+                            <label class="sex"> <input type="radio" name="sex">Девушка</label>
+                        </div>
+                        <label for="birth">Дата рождения:</label>
+                        <!--input type="date" id="birth" name="Дата рождения" required/-->
+                        {{form.birth}}
+                        <label for="telegram">
+                            <span>Телеграм</span>
+                            <!--input name="telegram" id="telegram" type="text" required-->
+                            {{form.telegram}}
+                            <span class="error hidden">Введите символ @ и английские буквы</span>
+                          </label>  
+
+                        <label for="phone">
+                            <span>Номер телефона</span>
+                            <!--input type="tel" id="phone" required-->
+                            {{form.phone}}
+                            <span class="error hidden">Введите номер телефона!</span>
+                        </label>
+                        
+                        <label for="inf">О себе</label>
+                        <!--textarea name="inf" id="inf" cols="40" rows="10"></textarea-->
+                        {{forms.inf}}
+                        <label for="inf">Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :)</label>
+                    </form>
+                    <script src= "{% static "js/script.js" %} "></script>
+                </div>
+            </section>
+            <section>
+
+                <div class="pag"><p>Так будет выглядеть твоя будущая страница</p></div>
+                <div class="view_page">
+                    <div class="left">
+                        <div class="photo_selected"></div>
+                        <button class="button_show">Показать контакты</button>
+                    </div>
+                    <div class="inform">
+                        <div class="name_show" id="name_show"></div>
+                        <div class="inf_below">
+                            <div class="sex_show" id="sex_show"></div>
+                            <div class="birth_show" id="birth_show"></div>
+                        </div>
+                        <div class="about_show" id="about_show"></div>
+                    </div>
+                </div>
+                <div class="smth">
+                    <div class="new_inf">Мы совсем ничего про тебя не знаем</div>
+                    <div class="tell"> 
+                        Расскажи о себе. Люди пишут тем, кому доверяют. Тем более при поиске соседа.
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+        <div class="fn">
+            <button class="button_next" onclick="document.getElementById('firstPage').submit();">Продолжить</button>
+        </div>
+        <div class="end">
+            <div class="connection">
+                <div class="mail">Support@homeet.com</div>
+                <div class="describe"> Техническая поддержка</div>
+            </div>
+            <div class="cont">
+                <div class="text">
+                    <p>О сервисе</p>
+                    <p>Контакты</p>
+                    <p>Политика конфиденциальности</p>
+                </div>
+                <div class="icons">
+                    <button class="button"><img src="{% static "img/tg.png"  %}" alt="tg"></button>
+                    <button class="button"><img src="{% static "img/vk.png"  %}" alt="vk"></button>
+                </div>
+            </div>
+            <img src="img/Line 4.png" alt="">
+            <div class="endend">
+                <p>Предложение не является публичной офертой. 
+Сервис не несет ответственности за действия пользователей, достоверность информации и т.д.</p>
+                <p>Сделано в бвср</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

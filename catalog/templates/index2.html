@@ -27,27 +27,41 @@
         </div>
         <div class="main">
             <section>
-                
+
                 <div class="information">
-                    <form class="form" method="post">
+                    <form class="form" method="post" id="secondPage">
                         <div class="who_choice">
                             <label class="who"> <input type="radio" name="who">Студент / выпускник</label>
                             <label class="who"> <input type="radio" name="who">Сотрудник</label>
                         </div>
-                        <label for="Course">Курс</label>
-                        <input name="Course" id="Course" type="text" >
+                        <label for="course">
+                            <span>Курс</span>
+                            {{form.course}}
+                        </label>
+                        <!--input name="Course" id="Course" type="text" -->
                         <select name="obrazov" class="obrazov">
                             <option value="Бакалавриат">Бакалавриат</option>
                             <option value="Магистратураa">Магистратура</option>
                             <option value="Аспирантура">Аспирантура</option>
                             <option value="Сотрудник">Сотрудник</option>
                         </select>
-                        <label for="facultet">Факультет</label>
-                        <input name="facultet" id="facultet" type="text" placeholder="Факультет">
-                        <label for="ObProg">Образовательная программа</label>
-                        <input name="ObProg" id="ObProg" type="text" placeholder="Образовательная программа">
-                        <input type="text" placeholder="Работа">
+                        <label for="faculty">
+                            <span>Факультет</span>
+                            {{form.faculty}}
+                        </label>
+                        <!--input name="facultet" id="facultet" type="text" placeholder="Факультет"-->
+                        <label for="obProg">
+                            <span>Образовательная программа</span>
+                            {{form.program}}
+                        </label>
+                        <!--input name="ObProg" id="ObProg" type="text" placeholder="Образовательная программа"-->
+                        <label for="work">
+                            <span>Работа</span>
+                            {{form.program}}
+                        </label>
+                        <!--input type="text" placeholder="Работа"-->
                         {{form.name.as_hidden}}
+                        {{form.inf.as_hidden}}
                     </form>
                     <script src= "{% static "js/script.js" %} "></script>
                 </div>
@@ -64,7 +78,11 @@
                         <div class="inf_below">
                             <div class="sex_show" id="sex_show"></div>
                             <div class="birth_show" id="birth_show"></div>
+                            <div class="course_show" id="course_show"></div>
+                            <div class="faculty_show" id="faculty_show"></div>
+                            <div class="obrazov_show" id="obrazov_show"></div>
                         </div>
+<div class="work_show" id="work_show"></div>
                         <div class="about_show" id="about_show"></div>
                     </div>
                 </div>
@@ -75,7 +93,7 @@
                     </div>
                 </div>
             </section>
-            
+
         </div>
         <div class="fn">
             <button class="button_next" >Продолжить</button>
@@ -96,7 +114,7 @@
                     <button class="button"><img src="{% static "img/vk.png"  %}" alt="vk"></button>
                 </div>
             </div>
-            <img src="img/Line 4.png" alt="">
+            <img src="{% static "img/Line 4.png" %}" alt="">
             <div class="endend">
                 <p>Предложение не является публичной офертой. 
 Сервис не несет ответственности за действия пользователей, достоверность информации и т.д.</p>

@@ -1,4 +1,3 @@
-
 var nam = document.getElementById('id_name');
 if (nam) {
 
@@ -34,11 +33,38 @@ var about = document.getElementById('id_inf');
 if (about) {
     
     about.addEventListener('input', function() {
-    var inputInf = this.value;
-    var aboutShow = document.getElementById('about_show');
-    aboutShow.innerText = inputInf;
+        var inputInf = this.value;
+        var aboutShow = document.getElementById('about_show');
+        aboutShow.innerText = inputInf;
     });  
 }
+var course = document.getElementById('id_course');
+if (course) {
+
+    course.addEventListener('input', function() {
+    var inputCourse = this.value;
+    var courseShow = document.getElementById('course_show');
+        courseShow.innerText = inputCourse;
+    });
+}
+var faculty = document.getElementById('id_faculty');
+if (faculty) {
+
+    faculty.addEventListener('input', function() {
+    var inputFaculty = this.value;
+    var facultyShow = document.getElementById('faculty_show');
+        facultyShow.innerText = inputFaculty;
+    });
+}
+document.addEventListener('DOMContentLoaded', function() {
+    var about = document.getElementById('id_inf');
+    if (about) {
+        var inputInf = about.value;
+        var aboutShow = document.getElementById('about_show');
+        aboutShow.innerText = inputInf;
+    }
+});
+
 
 const nameInput = document.getElementById('id_name');
 const nameErrorSpan = document.querySelector('.error');
@@ -113,4 +139,3 @@ function changeOption(){
 }
  
 obrazovsSelect.addEventListener("change", changeOption);
-

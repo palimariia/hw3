@@ -140,6 +140,9 @@ h3{
     line-height: 20px;
     letter-spacing: -0.14px;
 }
+.information{
+width: 366px;
+}
 input{
     border-radius: 8px;
     background: #F4F4F6;

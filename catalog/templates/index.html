@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="information">
-                    
+
                     <form class="form" method="post" id="firstPage">
                         {% csrf_token %}
                         <div class="form_input">
@@ -60,7 +60,7 @@
                             <!--input name="telegram" id="telegram" type="text" required-->
                             {{form.telegram}}
                             <span class="error hidden">Введите символ @ и английские буквы</span>
-                          </label>  
+                          </label>
 
                         <label for="phone">
                             <span>Номер телефона</span>
@@ -68,11 +68,13 @@
                             {{form.phone}}
                             <span class="error hidden">Введите номер телефона!</span>
                         </label>
-                        
-                        <label for="inf">О себе</label>
+
+                        <label for="inf">
+                            <span>О себе</span>
                         <!--textarea name="inf" id="inf" cols="40" rows="10"></textarea-->
-                        {{forms.inf}}
-                        <label for="inf">Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :)</label>
+                            {{forms.inf}}
+                            <span>Например: Редко готовлю, но люблю ботать на кухне по ночам. Хочу завести собаку. Очень люблю читать, играть в хорроры и смотреть аниме. Открыт к общению и взаимопомощи :)</span>
+                        </label>
                     </form>
                     <script src= "{% static "js/script.js" %} "></script>
                 </div>
@@ -96,12 +98,12 @@
                 </div>
                 <div class="smth">
                     <div class="new_inf">Мы совсем ничего про тебя не знаем</div>
-                    <div class="tell"> 
+                    <div class="tell">
                         Расскажи о себе. Люди пишут тем, кому доверяют. Тем более при поиске соседа.
                     </div>
                 </div>
             </section>
-            
+
         </div>
         <div class="fn">
             <button class="button_next" onclick="document.getElementById('firstPage').submit();">Продолжить</button>
@@ -122,7 +124,7 @@
                     <button class="button"><img src="{% static "img/vk.png"  %}" alt="vk"></button>
                 </div>
             </div>
-            <img src="img/Line 4.png" alt="">
+            <img src="{% static "img/Line 4.png" %}" alt="">
             <div class="endend">
                 <p>Предложение не является публичной офертой. 
 Сервис не несет ответственности за действия пользователей, достоверность информации и т.д.</p>
